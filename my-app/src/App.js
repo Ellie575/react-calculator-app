@@ -14,6 +14,8 @@ export const ACTIONS = {
 function reducer(state, { type, payload }) {
   switch (type) {
     case ACTIONS.ADD_DIGIT:
+    default:
+      // do nothing
       if (state.overwrite) {
         return {
           ...state,
@@ -113,6 +115,8 @@ function reducer(state, { type, payload }) {
       case "÷":
         computation = prev / current;
         break;
+      default:
+      // do nothing
     }
     return computation.toString();
   }
